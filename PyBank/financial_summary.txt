@@ -1,0 +1,7 @@
+FINANCIAL SUMMARY
+___________________________
+Total Months:  86
+Total Profit: $38,382,578.00
+Average Monthly Change: +$446,309.05
+Greatest Monthly Profit Increase: Feb-2012 -> +$1,170,593.00
+Greatest Monthly Loss: Sep-2013 -> $(1,196,225.00)
