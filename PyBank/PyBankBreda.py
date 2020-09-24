@@ -9,8 +9,8 @@ csvpath = os.path.join('Resources', 'budget_data.csv')
 with open(csvpath) as csv_file:
     budget_data = csv.reader(csv_file, delimiter=',')
 
-# Skip the header row
-    next(budget_data)
+# Sets the header row
+    header_row = next(budget_data)
 
 # Sets lists from the csv file to perform summary calculations upon
     all_rows = list(budget_data)
