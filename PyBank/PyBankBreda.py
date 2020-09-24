@@ -12,8 +12,12 @@ with open(csvpath) as csv_file:
 # Skip the header row
     next(budget_data)
 
-# Sets a variable for the total number of months included in the dataset
+# Sets lists from the csv file to perform summary calculations upon
     all_rows = list(budget_data)
+    lists = list(zip(*all_rows))
+    months = lists[0]
+    profits = [int(p) for p in lists[1]]
+
 
 # Sets a variable for the net total amount of "Profit/Losses" over the entire period, and sums the "Profit/Loss" column
     total_profit_loss = 0
@@ -22,8 +26,9 @@ with open(csvpath) as csv_file:
 
 # Creates a variable for the average of the changes in "Profit/Losses" over the entire period
 
-    average_monthly_change = total_profit_loss / len(all_rows)
-    
+    net_change = [int(profits[n] - profits[n-1]) for n in range(1,len(profits))]
+    average_monthly_change = sum(net_change) / len(all_rows)-1
+
 # Creates a variable for the greatest increase in profits (date and amount) over the entire period
     greatest_monthly_profit = 0
     most_profitable_month = 0
